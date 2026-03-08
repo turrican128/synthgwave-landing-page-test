@@ -26,7 +26,10 @@ export function LeadForm() {
       await submitLead({ name: name.trim(), email: email.trim() });
       setStatus("success");
     } catch (err) {
-      setErrorMsg(err instanceof Error ? err.message : "שגיאה לא ידועה");
+      const msg = err instanceof TypeError
+        ? "שגיאת רשת — בדקו את החיבור לאינטרנט"
+        : err instanceof Error ? err.message : "שגיאה לא ידועה";
+      setErrorMsg(msg);
       setStatus("error");
     }
   };

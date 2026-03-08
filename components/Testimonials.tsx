@@ -36,8 +36,8 @@ export function Testimonials() {
       <div className="space-y-6">
         {testimonials.map((t, i) => (
           <motion.blockquote
-            key={i}
-            className="bg-white/5 border-r-4 border-neon-magenta rounded-xl p-6 pr-8"
+            key={t.name}
+            className="bg-white/5 border-s-4 border-neon-magenta rounded-xl p-6 ps-8"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -48,7 +48,7 @@ export function Testimonials() {
             </p>
             <footer>
               <span className="text-neon-magenta font-bold">{t.name}</span>
-              <span className="text-gray-500 text-sm mr-2">— {t.role}</span>
+              <span className="text-gray-500 text-sm ms-2">— {t.role}</span>
             </footer>
           </motion.blockquote>
         ))}

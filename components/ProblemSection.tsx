@@ -48,7 +48,7 @@ export function ProblemSection() {
       <div className="space-y-8">
         {problems.map((problem, i) => (
           <motion.div
-            key={i}
+            key={problem.title}
             className="flex gap-6 items-start bg-white/5 border border-neon-purple/20 rounded-xl p-6"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
