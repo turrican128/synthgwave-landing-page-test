@@ -127,3 +127,54 @@
     @apply font-sans;
   }
 }
+
+/* ============================================
+   SYNTHWAVE THEME — Tailwind v4 @theme tokens
+   ============================================ */
+
+@theme {
+  /* Colors */
+  --color-background: #0B0C10;
+  --color-neon-magenta: #FF00FF;
+  --color-neon-cyan: #00FFFF;
+  --color-neon-purple: #BF00FF;
+  --color-grid-purple: #1a0533;
+
+  /* Font family */
+  --font-family-heebo: 'Heebo', sans-serif;
+
+  /* Box shadows */
+  --shadow-neon-magenta: 0 0 10px #FF00FF, 0 0 30px #FF00FF, 0 0 60px #FF00FF44;
+  --shadow-neon-cyan: 0 0 10px #00FFFF, 0 0 30px #00FFFF, 0 0 60px #00FFFF44;
+  --shadow-neon-sm: 0 0 6px #FF00FF, 0 0 12px #FF00FF44;
+}
+
+/* ============================================
+   GLOBAL BODY STYLES
+   ============================================ */
+
+body {
+  background-color: #0B0C10;
+  color: #ffffff;
+}
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+
+@layer utilities {
+  .text-glow-magenta {
+    text-shadow: 0 0 10px #FF00FF, 0 0 30px #FF00FF44;
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px #00FFFF, 0 0 30px #00FFFF44;
+  }
+  .grid-perspective {
+    background-image:
+      linear-gradient(rgba(191, 0, 255, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(191, 0, 255, 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(500px) rotateX(45deg);
+    transform-origin: bottom;
+  }
+}
