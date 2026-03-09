@@ -1,0 +1,75 @@
+=====================================
+  SYNTHWAVE LANDING PAGE — PROJECT INFO
+=====================================
+
+GitHub Repository:
+  https://github.com/turrican128/synthgwave-landing-page-test
+
+Local Path:
+  c:\ClaudeSandbox\Alex workspace\synthwave-landing\
+
+Branch: main
+
+-------------------------------------
+STACK
+-------------------------------------
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS v4 (config בתוך globals.css, אין tailwind.config.ts)
+- shadcn/ui v4
+- Framer Motion v12
+- Static Export -> תיקיית out/
+- Hosting: GitHub Pages
+- Lead Capture: Make.com Webhook
+
+-------------------------------------
+COMMANDS
+-------------------------------------
+npm run dev       -> שרת פיתוח על http://localhost:3000
+npm run build     -> build סטטי לתיקיית out/
+npm test          -> הרצת 3 unit tests
+
+-------------------------------------
+ENV VARIABLES
+-------------------------------------
+.env.local (לא מועלה ל-GitHub):
+  NEXT_PUBLIC_WEBHOOK_URL=https://hook.eu1.make.com/YOUR_WEBHOOK_ID
+  NEXT_PUBLIC_BASE_PATH=   (ריק בdev, בפרודקשן: /synthgwave-landing-page-test)
+
+-------------------------------------
+GITHUB PAGES SETUP (עדיין נדרש)
+-------------------------------------
+1. Settings -> Pages -> Source: GitHub Actions
+2. Settings -> Secrets -> Actions -> הוסף:
+   - NEXT_PUBLIC_WEBHOOK_URL  = ה-webhook URL מ-Make.com
+   - NEXT_PUBLIC_BASE_PATH    = /synthgwave-landing-page-test
+
+-------------------------------------
+STRUCTURE
+-------------------------------------
+app/
+  layout.tsx        -> RTL, Heebo font, metadata
+  page.tsx          -> הרכבת כל הסקשנים
+  globals.css       -> Synthwave theme tokens + utilities
+
+components/
+  HeroSection.tsx       -> כותרת + גריד מונפש + CTA
+  ProblemSection.tsx    -> 3 כרטיסי כאב לקוח
+  AudioPreview.tsx      -> placeholder (לא מחובר עדיין)
+  CourseModules.tsx     -> 6 מודולי קורס (shadcn Cards)
+  Testimonials.tsx      -> 3 המלצות
+  LeadForm.tsx          -> טופס + ולידציה + Make.com
+
+lib/
+  submitLead.ts              -> fetch POST ל-webhook
+  __tests__/submitLead.test.ts -> 3 Jest tests
+
+.github/workflows/deploy.yml -> GitHub Actions deployment
+
+-------------------------------------
+WHAT'S MISSING / TODO
+-------------------------------------
+- AudioPreview: להוסיף קובץ MP3 אמיתי או YouTube embed
+- Make.com: ליצור Webhook ולהכניס את ה-URL
+- GitHub Pages: להפעיל בהגדרות + להוסיף Secrets
+
+=====================================
