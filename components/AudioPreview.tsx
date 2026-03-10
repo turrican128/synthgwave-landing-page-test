@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function AudioPreview() {
   return (
-    <section className="py-24 px-4 text-center">
+    <section id="audio-preview" className="py-24 px-4 text-center">
       <motion.h2
         className="text-3xl md:text-4xl font-black mb-4"
         initial={{ opacity: 0, y: 20 }}

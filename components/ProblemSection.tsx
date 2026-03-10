@@ -22,7 +22,7 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="py-24 px-4 max-w-4xl mx-auto">
+    <section id="problem" className="py-24 px-4 max-w-4xl mx-auto">
       <motion.h2
         className="text-3xl md:text-4xl font-black text-center mb-4"
         initial={{ opacity: 0, y: 30 }}

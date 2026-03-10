@@ -9,7 +9,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 text-center">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 text-center">
       {/* Animated grid background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
