@@ -1,3 +1,4 @@
+import { SiteHeader } from "@/components/SiteHeader";
 import { HeroSection } from "@/components/HeroSection";
 import { ProblemSection } from "@/components/ProblemSection";
 import { AudioPreview } from "@/components/AudioPreview";
@@ -7,13 +8,16 @@ import { LeadForm } from "@/components/LeadForm";
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection />
-      <ProblemSection />
-      <AudioPreview />
-      <CourseModules />
-      <Testimonials />
-      <LeadForm />
-    </main>
+    <>
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <AudioPreview />
+        <CourseModules />
+        <Testimonials />
+        <LeadForm />
+      </main>
+    </>
   );
 }
