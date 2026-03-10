@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "ראשי", href: "#hero" },
@@ -32,13 +33,15 @@ export function SiteHeader() {
         </nav>
 
         {/* Left: CTA */}
-        <Button
-          asChild
-          size="sm"
-          className="border border-neon-magenta bg-transparent text-neon-magenta hover:bg-neon-magenta hover:text-black"
+        <a
+          href="#lead-form"
+          className={cn(
+            buttonVariants({ size: "sm" }),
+            "border border-neon-magenta bg-transparent text-neon-magenta hover:bg-neon-magenta hover:text-black"
+          )}
         >
-          <a href="#lead-form">הרשמה</a>
-        </Button>
+          הרשמה
+        </a>
       </div>
     </header>
   );
