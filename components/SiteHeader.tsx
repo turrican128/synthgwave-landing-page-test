@@ -19,7 +19,7 @@ export function SiteHeader() {
         </span>
 
         {/* Center: nav links */}
-        <nav className="hidden gap-6 md:flex">
+        <nav aria-label="ניווט ראשי" className="hidden gap-6 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
